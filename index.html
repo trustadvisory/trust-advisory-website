@@ -26,7 +26,7 @@
   "@type": "FinancialService",
   "name": "Trust Advisory",
   "description": "Trusted Realty & Unified Financial Services Team offering Home Loan, Personal Loan, Mortgage Loan, Car Loan, Gold Loan and Property services in Ajmer",
-  "telephone": "+919799388885 , +919216077270",
+  "telephone": "+919799388885",
   "email": "trustadvisory.desk@gmail.com",
   "address": {
     "@type": "PostalAddress",
@@ -842,7 +842,7 @@
       <a href="#services">Services</a>
       <a href="#banks">Partners</a>
       <a href="#contact">Contact</a>
-      <span class="nav-phone">📞 +91 97993 88885</span>
+      <span class="nav-phone">📞 +91 97993 88885 , +91 92160 77270</span>
     </div>
     <a href="#apply" class="nav-cta">Apply for Loan</a>
   </nav>
@@ -1125,7 +1125,7 @@
           <div class="contact-icon">⏰</div>
           <div class="contact-info">
             <label>Working Hours</label>
-            <p>Monday – Saturday: 9:00 AM – 7:00 PM</p>
+            <p>Monday – Saturday: 10:00 AM – 6:00 PM</p>
           </div>
         </div>
       </div>
@@ -1156,6 +1156,115 @@
   <a href="https://wa.me/919799388885?text=Hi%20Trust%20Advisory%2C%20I%20need%20help%20with%20a%20loan"
     class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
 
+
+  <!-- wkefbwivbeofbeofbr -->
+
+  <section style="padding:80px 20px;background:#f5f7fb;">
+
+    <div style="
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    border-top:5px solid #C9A84C;
+  ">
+
+      ```
+      <h2 style="
+  text-align:center;
+  color:#0D2356;
+  margin-bottom:10px;
+">
+        Customer Review
+      </h2>
+
+      <p style="
+  text-align:center;
+  color:#666;
+  margin-bottom:30px;
+">
+        Share your experience with Trust Advisory
+      </p>
+
+      <label><b>Your Name</b></label>
+      <input type="text" id="reviewName" placeholder="Enter your name"
+        style="width:100%;padding:12px;margin:8px 0 20px 0;border:1px solid #ddd;border-radius:8px;">
+
+      <label><b>Overall Rating</b></label>
+      <select id="overall" style="width:100%;padding:12px;margin:8px 0 20px 0;border:1px solid #ddd;border-radius:8px;">
+        <option value="5">Excellent (5)</option>
+        <option value="4">Very Good (4)</option>
+        <option value="3">Good (3)</option>
+        <option value="2">Average (2)</option>
+        <option value="1">Poor (1)</option>
+      </select>
+
+      <label><b>Experience</b></label>
+      <select id="experience"
+        style="width:100%;padding:12px;margin:8px 0 20px 0;border:1px solid #ddd;border-radius:8px;">
+        <option value="5">Excellent (5)</option>
+        <option value="4">Very Good (4)</option>
+        <option value="3">Good (3)</option>
+        <option value="2">Average (2)</option>
+        <option value="1">Poor (1)</option>
+      </select>
+
+      <label><b>Communication</b></label>
+      <select id="communication"
+        style="width:100%;padding:12px;margin:8px 0 20px 0;border:1px solid #ddd;border-radius:8px;">
+        <option value="5">Excellent (5)</option>
+        <option value="4">Very Good (4)</option>
+        <option value="3">Good (3)</option>
+        <option value="2">Average (2)</option>
+        <option value="1">Poor (1)</option>
+      </select>
+
+      <label><b>Ease of Getting Service</b></label>
+      <select id="ease" style="width:100%;padding:12px;margin:8px 0 20px 0;border:1px solid #ddd;border-radius:8px;">
+        <option value="5">Excellent (5)</option>
+        <option value="4">Very Good (4)</option>
+        <option value="3">Good (3)</option>
+        <option value="2">Average (2)</option>
+        <option value="1">Poor (1)</option>
+      </select>
+
+      <label><b>Your Comments</b></label>
+      <textarea id="comment" placeholder="Tell us about your experience..."
+        style="width:100%;height:120px;padding:12px;border:1px solid #ddd;border-radius:8px;"></textarea>
+
+      <button type="button" onclick="submitReview()" style="
+    width:100%;
+    margin-top:25px;
+    background:#0D2356;
+    color:white;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+  ">
+        Submit Review
+      </button>
+      <p id="reviewSuccess" style="
+  display:none;
+  color:green;
+  text-align:center;
+  margin-top:15px;
+  font-weight:bold;
+">
+        ✅ Review submitted successfully. Thank you for your feedback!
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- trfrgthyjtuyhgethryjt -->
+
   <script>
     const SHEET_URL = "https://script.google.com/macros/s/AKfycbxS7znkev7b2FmsCcmWxfE1ZNaJmNHK1wQmwmMHnC7Br6cw4sgv0xjHI3ias22U_Ao2/exec";
 
@@ -1173,29 +1282,73 @@
       const city = document.getElementById('city').value;
       const message = document.getElementById('message').value;
 
-      // Disable button to prevent double submit
       const btn = document.querySelector('.submit-btn');
       btn.disabled = true;
       btn.textContent = 'Submitting...';
 
-      const payload = { name, phone, loanType, amount, city, message };
+      const payload = {
+        name,
+        phone,
+        loanType,
+        amount,
+        city,
+        message
+      };
 
       try {
         await fetch(SHEET_URL, {
           method: 'POST',
           mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json'
+          },
           body: JSON.stringify(payload)
         });
       } catch (err) {
-        console.error('Sheet error:', err);
+        console.error(err);
       }
 
-      // Show success message regardless (no-cors won't return readable response)
       document.getElementById('formInner').style.display = 'none';
       document.getElementById('successMsg').style.display = 'block';
     }
+
+    async function submitReview() {
+
+      const payload = {
+        type: "review",
+        name: document.getElementById("reviewName").value,
+        overall: document.getElementById("overall").value,
+        experience: document.getElementById("experience").value,
+        communication: document.getElementById("communication").value,
+        serviceEase: document.getElementById("ease").value,
+        comment: document.getElementById("comment").value
+      };
+
+      try {
+        await fetch(SHEET_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+        document.getElementById("reviewSuccess").style.display = "block";
+
+
+        document.getElementById("reviewName").value = "";
+        document.getElementById("experience").value = "5";
+        document.getElementById("communication").value = "5";
+        document.getElementById("ease").value = "5";
+        document.getElementById("comment").value = "";
+
+      } catch (error) {
+        console.error(error);
+        alert("Unable to submit review");
+      }
+    }
   </script>
+
 
 </body>
 
